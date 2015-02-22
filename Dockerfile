@@ -5,6 +5,7 @@ ENV SERF_HOME /root/serf
 RUN mkdir $SERF_HOME && mkdir $SERF_HOME/bin && mkdir $SERF_HOME/etc 
 
 RUN yum install -y wget unzip curl dnsmasq && yum clean all
+RUN echo -e "listen-address=127.0.0.1\nconf-dir=/etc/dnsmasq.d" > /etc/dnsmasq.conf
 # slove "dnsmasq: setting capabilities failed: Operation not permitted"
 # refs:https://github.com/nicolasff/docker-cassandra/issues/8
 RUN echo "user=root" >> /etc/dnsmasq.conf
