@@ -14,7 +14,8 @@ docker-centos-serf
 
 * 加入指定的叢集，**SERF_JOIN_IP**=1.1.1.1（叢集內任一節點 IP）
 
-         docker run -d -p 2222:22 --name=node2 --hostname=node2.example.local --dns=127.0.0.1 -e SERF_JOIN_IP=<node_IP> fayehuang/centos-serf`
+`docker run -d -p 2222:22 --name=node2 --hostname=node2.example.local --dns=127.0.0.1 -e SERF_JOIN_IP=<node_IP> fayehuang/centos-serf`
+
 * 不加入叢集
 
-         docker run -d -p 2222:22 --name=node1 --hostname=node1.example.local --dns=127.0.0.1 fayehuang/centos-serf`
+`docker run -d -p 2222:22 --name=node1 --hostname=node1.example.local --dns=127.0.0.1 fayehuang/centos-serf`
