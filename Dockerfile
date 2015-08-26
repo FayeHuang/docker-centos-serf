@@ -17,6 +17,7 @@ COPY serf_init.sh $SERF_HOME/bin/serf_init.sh
 COPY dnsmasq.json $SERF_HOME/etc/dnsmasq.json
 COPY dnsmasq.sh $SERF_HOME/bin/dnsmasq.sh
 RUN chmod +x $SERF_HOME/bin/*
+RUN cp $SERF_HOME/bin/serf /usr/local/bin/
 
 COPY supervisord.conf /etc/supervisord.conf
 
