@@ -1,7 +1,7 @@
-FROM fayehuang/centos-supervisor
+FROM fayehuang/centos-webtty
 MAINTAINER FayeHuang
 
-ENV SERF_HOME /root/serf
+ENV SERF_HOME=/docker_init/serf
 RUN mkdir $SERF_HOME && mkdir $SERF_HOME/bin && mkdir $SERF_HOME/etc 
 
 RUN yum install -y wget unzip curl dnsmasq && yum clean all
@@ -21,7 +21,7 @@ RUN cp $SERF_HOME/bin/serf /usr/local/bin/
 
 COPY supervisord.conf /etc/supervisord.conf
 
-EXPOSE 22
+EXPOSE 22 3000
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
  
